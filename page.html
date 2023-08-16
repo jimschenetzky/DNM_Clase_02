@@ -15,18 +15,23 @@
         <footer>
             <a href="index.html">VOLVER</a>
         </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js" integrity="sha512-bcfltY+lNLlNxz38yBBm/HLaUB1gTV6I0e+fahbF9pS6roIdzUytozWdnFV8ZnM6cSAG5EbmO0ag0a/fLZSG4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"
+            integrity="sha512-bcfltY+lNLlNxz38yBBm/HLaUB1gTV6I0e+fahbF9pS6roIdzUytozWdnFV8ZnM6cSAG5EbmO0ag0a/fLZSG4Q=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
         <script>
             // Creo una variable de nombre data para contener un arreglo
             var data, datosArreglados;
-            function preload () {
-                data=loadJSON("https://raw.githubusercontent.com/jimschenetzky/DNM_Clase_02/main/cursos.json");
+            function preload() {
+                data = loadJSON("https://raw.githubusercontent.com/jimschenetzky/DNM_Clase_02/main/cursos.json");
             }
-            // En esta ocasión no necesito un canvas 
+            // En esta ocasión no necesito un canvas
             // Lo que sí necesito una lista de definición por cada ítem en el arreglo contenido por la variable de nombre data
             function setup() {
                 noCanvas();
-                datosArreglados=Object.values(data);
+                datosArreglados = Object.values(data);
                 console.log(datosArreglados);
                 datosArreglados.forEach((x) => {
                     createElement("dl", "<dt>" + x.name + " (" + x.code + ")</dt><dd>" + x.about + "</dd>").parent("aqui");
